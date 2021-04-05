@@ -20,7 +20,7 @@ from pysat.formula import CNF
 
 
 def arquivo():
-    ar = open('text.txt', 'r')
+    ar = open('text2.txt', 'r')
     a = ar.read().split('\n')
     return a
     ar.close()
