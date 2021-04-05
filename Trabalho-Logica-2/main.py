@@ -15,14 +15,12 @@
 
 
 
-
-
 from pysat.solvers import Glucose4
 from pysat.formula import CNF
 
 
 def arquivo():
-    ar = open('text2.txt', 'r')
+    ar = open('text.txt', 'r')
     a = ar.read().split('\n')
     return a
     ar.close()
@@ -129,7 +127,6 @@ def criar_lista_resutado(soluc,r_arestas,lista,linha,coluna):
                 if ar_split[1] == p_ar_split[0] and ar_split[0] != p_ar_split[1]:
                     if arestas[i] not in arestas_uso:
                         arestas_uso.append(arestas[i])
-                        
                         a.append(lista[indf])
             elif (len(lista_res) >= 1) and len(a) >= 0:
 
@@ -147,7 +144,6 @@ def criar_lista_resutado(soluc,r_arestas,lista,linha,coluna):
 
 
     return lista_res
-
 
 
 
@@ -259,7 +255,7 @@ def programinha():
         #Retorna da lista model_g so numeros positivos
         lista = list(filter(lambda x: x > 0, model_g))
         #indice da aresta em arestas
-        u_v = int((lista[0]-1)/5)
+        u_v = int((lista[0]-1)/coluna)
         #Cria e retorna em ordem inversa o(s) caminho(s) que são verdadeiros
         re_lista = criar_lista_resutado(lista[0],arestas,r_lista,linha,coluna)
         re_lista_rec = re_lista
